@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-
-import { ProductContext } from "../context/ProductContextProvider";
 import ProductsComponent from "./shared/ProductsComponent";
+
+//context
+import { ProductContext } from "../context/ProductContextProvider";
 
 const Store = () => {
     const products = useContext(ProductContext);
+    // console.log(products)
 
     return (
         <div style={{display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', alignItems: 'center'}}>

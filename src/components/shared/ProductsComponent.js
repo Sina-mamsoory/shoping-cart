@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductsComponent = ({productsData}) => {
 
@@ -12,6 +13,7 @@ const ProductsComponent = ({productsData}) => {
                 <p>{price}</p>
             </div>
             <p>Product for you</p>
+            <Link to={`/products/${id}`}>Details</Link>
         </div>
     )
 }

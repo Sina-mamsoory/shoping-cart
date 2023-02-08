@@ -15,11 +15,11 @@ const ProductContextProvider = ({children}) => {
     }, [])
 
     return(
-        <div>
+        <>
             <ProductContext.Provider value={products}>
                 {children}
             </ProductContext.Provider>
-        </div>
+        </>
     )
 }
 
