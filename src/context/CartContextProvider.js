@@ -24,7 +24,7 @@ const cartReducer = (state, action) => {
             const newSelectedItem = state.selectedItems.filter(item => item.id !== action.payload.id);
             return {
                 ...state,
-                selectedItems: [...state.selectedItems],
+                selectedItems: [...newSelectedItem],
             }
         case 'INCREASE':
             const indexI = state.selectedItems.findIndex(item => item.id === action.payload.id);
@@ -34,7 +34,7 @@ const cartReducer = (state, action) => {
             }
         case 'DECREASE':
             const indexD = state.selectedItems.findIndex(item => item.id === action.payload.id);
-            state.selectedItems.quantity--;
+            state.selectedItems[indexD].quantity--;
             return {
                 ...state,
             }

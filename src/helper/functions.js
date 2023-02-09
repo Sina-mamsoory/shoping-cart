@@ -1,6 +1,21 @@
 const shorten = (title) => {
     const splitedString = title.split(' ');
-    console.log(splitedString);
+    const shortedtitle = splitedString.splice(2, 2);
+    
+    return shortedtitle.join(' ');
 }
 
-export {shorten}
+const isInCart = ( state, id ) => {
+    const result = !!state.selectedItems.find(item => item.id === id);
+    return result
+}
+
+const quantityCounter = (state, id) => {
+    const index = state.selectedItems.findIndex(item => item.id === id);
+
+    if(index === -1)
+        return false;
+    else
+        return state.selectedItems[index].quantity;
+}
+export {shorten, isInCart, quantityCounter}
