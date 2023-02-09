@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { shorten } from "../../helper/functions";
 
 const ProductsComponent = ({productsData}) => {
 
@@ -9,11 +10,17 @@ const ProductsComponent = ({productsData}) => {
         <div>
             <img src={image} alt="product image" style={{width: '240px', height: '390px'}} />
             <div>
-                <h3>{title}</h3>
+                <h3>{shorten(title)}</h3>
                 <p>{price}</p>
             </div>
             <p>Product for you</p>
-            <Link to={`/products/${id}`}>Details</Link>
+            <div>
+                <Link to={`/products/${id}`}>Details</Link>
+                <div>
+
+                </div>
+
+            </div>
         </div>
     )
 }
