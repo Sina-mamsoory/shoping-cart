@@ -12,8 +12,6 @@ const ProductsComponent = ({productsData}) => {
     const {state, dispatch} = useContext(CartContext);
 
     const {image, title, price, id} = productsData;
-    const sdsd = quantityCounter(state, id);
-    console.log(sdsd)
 
     return(
         <div>
@@ -33,7 +31,6 @@ const ProductsComponent = ({productsData}) => {
                         <button onClick={() => dispatch({type: 'INCREASE', payload: productsData})} >+</button>:
                         <button onClick={() => dispatch({type: 'ADD_ITEM', payload: productsData})}>Add to Cart</button>
                     }
-                    {console.log(state)}
                 </div>
 
             </div>
