@@ -32,7 +32,7 @@ const ProductsComponent = ({productsData}) => {
                         <button onClick={() => dispatch({type: 'ADD_ITEM', payload: productsData})}>Add to Cart</button>
                     }
                 </div>
-
+                    {console.log(state)}
             </div>
         </div>
     )
