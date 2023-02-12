@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Cart from "./shared/Cart";
 
+import styles from './Shop.module.css'
+
 
 //context
 import { CartContext } from "../context/CartContextProvider";
@@ -11,15 +13,15 @@ const Shop = () => {
     const {state , dispatch} = useContext(CartContext);
 
     return (
-        <div>
-            <div>
+        <div className={styles.container}>
+            <div className={styles.productsContainer}>
                 {
                     state.selectedItems.map(item => <Cart key={item.id} productData={item} />)
                 }
             </div>
             {
                 state.itemCounter > 0 ?
-                <div>
+                <div className={styles.infoContainer}>
                     <div>
                         <button onClick={() => dispatch({type: 'CLEAR'})}>Clear All</button>
                         <button onClick={() => dispatch({type: 'CHECKED'})}>Check Out</button>
@@ -30,11 +32,11 @@ const Shop = () => {
                 </div>:
                 (
                     state.checked ?
-                    <div>
+                    <div className={styles.completed}>
                         <p>Checked out successfully.</p>
                         <button><Link to='/products'>Buy more</Link></button>
                     </div>:
-                    <div>
+                    <div className={styles.completed}>
                         <p>Want to buy?</p>
                         <button><Link to='/products'>Go to shop</Link></button>
                     </div>

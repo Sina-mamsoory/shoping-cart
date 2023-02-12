@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%; height: 40px;
+    box-shadow: 0px 5px 7px rgba(149, 157, 165, 0.4);
+    padding: 15px 130px;
+    background-color: #fff;
+}
+
+.header .linkContainer{
+    display: flex;
+    align-items: center;
+}
+
+.header .linkContainer .clicked, 
+.header .linkContainer .notClicked {
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+ 
+.header .linkContainer .notClicked {
+    color: #5b5959; 
+}
+
+.header .linkContainer .clicked {
+    color: black;
+    font-weight: bolder;
+}
+
+.header .icon {
+    margin-right: 230px;
+    position: relative;
+}
+
+.header .icon img {
+    width: 45px;
+}
+
+.header .icon span {
+    background-color: #019a01;
+    padding: 5px 8px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.85rem;
+    position: absolute;
+    top: -4px; right: -7px;
+}
